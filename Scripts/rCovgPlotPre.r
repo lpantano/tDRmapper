@@ -9,6 +9,10 @@ library("ggplot2")
 #read in top50Ccovg file
 args <- commandArgs(TRUE)
    seq <- read.delim(args, sep="\t")
+if (nrow(seq) < 2){
+    message("Not enough lines in input.")
+    quit()
+}
 #order by tRNA coverage
    oSeq<-seq[order(seq$tRNAPer,decreasing=FALSE),]
 # color scheme of each nucleotide
@@ -16,7 +20,7 @@ args <- commandArgs(TRUE)
 #create coverage plot
    myplot<-ggplot(data=seq,aes(x=Position,y=Catted,color=base))+
 #each nucleotide's base and coverage
-   geom_point(aes(size=perCovg+30,color=base),show_guide = FALSE,shape=15)+
+   geom_point(aes(size=perCovg+30,color=base),show.gened = FALSE,shape=15)+
 #genomic match type
    geom_point(aes(size=perCovg))+
 #formatting details

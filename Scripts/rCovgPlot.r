@@ -17,7 +17,7 @@ ntColor=c("black","#5BB304","#464747","#030C70","#0B5C73","white")
 #create coverage plot
    myplot<-ggplot(data=seq,aes(x=Position,y=Catted,fill=perGM,shape=GM,color=base))+
 #each nucleotide's base and coverage
-   geom_point(aes(size=perCovg+30,color=base),show_guide = FALSE,shape=15)+
+   geom_point(aes(size=perCovg+30,color=base),show.legend = FALSE,shape=15)+
 #genomic match type
    geom_point(aes(size=perCovg))+
    scale_shape_manual("Genomic type",limits=c("","oneDeletion","oneMismatch","twoDeletions","twoMismatches","threeConsDel"),values=c(15,21,23,24,25,22))+
