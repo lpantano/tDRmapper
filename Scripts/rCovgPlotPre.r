@@ -20,7 +20,7 @@ if (nrow(seq) < 2){
 #create coverage plot
    myplot<-ggplot(data=seq,aes(x=Position,y=Catted,color=base))+
 #each nucleotide's base and coverage
-   geom_point(aes(size=perCovg+30,color=base),show.gened = FALSE,shape=15)+
+   geom_point(aes(size=perCovg+30,color=base),show.legend = FALSE,shape=15)+
 #genomic match type
    geom_point(aes(size=perCovg))+
 #formatting details
